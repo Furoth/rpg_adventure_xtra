@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RPG Adventure</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="/img/favicon.png">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/dado.css">
+	<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/partida.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron" style="margin-top:10%;border-radius: 10px;box-shadow: 0 8px 16px -6px black;">
+			<h2>Bienvenido a </h2> <h1>Rpg adventure</h1>
+			<form action="/index" method="post">
+				<label>Introduce nombre: </label>
+				<input name="username" class="form-control" type="text" placeholder="Username...">
+				<select name="clase" class="form-control col-lg-6">
+					<option value="war_1">Guerrero</option>
+					<option value="arc_1">Arquero</option>
+					<option value="mag_1">Mago</option>
+				</select>
+				
+				<button type="submit" class="btn btn-primary">Empezar aventura</button>				
+				<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Instrucciones</button>
+				<div class="container">
+  				
+  					<div class="modal fade" id="myModal" role="dialog">
+    					<div class="modal-dialog">
+				      		<div class="modal-content">
+				        		<div class="modal-header">
+				          			<button type="button" class="close" data-dismiss="modal">&times;</button>
+				          			<h4 class="modal-title">Instrucciones</h4>
+				        		</div>
+				        		<div class="modal-body">
+				          			<p>
+				          				RPG Adventure es un juego de mesa, en el cual podrás escoger que clase de heroe serás (Guerrero, Arquero o Mago).
+				          			</p>
+				          			<p>
+				          				Tendrás que indicar un nombre de usuario, esta permitido repetir nombre, porque puedes volver a pasarte la misma pantalla con otro heroe.
+				          			</p>
+				          			<p>
+				          				Para empezar la partida tienes que clicar sobre el dado, este como cualquier dado, mostrará un numero, que será el numero de casillas que avanzaras.
+				          				Se te permitirá interactuar con el juego, escogiendo en ciertos puntos, que dirección tomar (en caso de no escoger dirección avanzará siempre hacia arriba).
+				          			</p>
+				          			<small>
+				          				Las casillas verdes son casillas que no invocan ningún evento.<br/>
+				          				Las rojas son casillas de lucha que te permetirán ganar puntos de experiencia.<br/>
+				          				Las purpuras son casillas que te darán una cantida aleatoria de dinero, que te permetirá evolucionar tu personaje al alcanzar cierto nivel.<br/>
+				          				La casilla negra es la batalla final contra un temible enemigo.<br/>
+				          				Las casillas naranjas indican el inicio y el fin del recorrido.<br/>
+				          			</small>
+				        		</div>
+				        		<div class="modal-footer">
+				          			<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				        		</div>
+				      		</div>
+				    	</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>	
+</body>
+
+</html>
